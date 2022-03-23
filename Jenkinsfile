@@ -2,7 +2,7 @@ node('Ubuntu'){
     
     stage('Clone repository') {
         
-        git branch: 'main', url: 'https://github.com/chia5/Hello_Python_App.git'
+        git branch: 'main', url: 'https://github.com/chia5/Flask_deployment.git'
         
     }
 
@@ -19,7 +19,7 @@ node('Ubuntu'){
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/Hello_Python_App.git HEAD:main"
+                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/Flask_deployment.git HEAD:main"
       }
     }
   }
